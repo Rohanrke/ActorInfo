@@ -11,13 +11,13 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import okhttp3.Interceptor;
 import okhttp3.Request;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-import retrofit2.converter.jackson.JacksonConverterFactory;
 
 public class ConnectionFactory {
 
     private static Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl("https://simplifiedcoding.net/demos/")
-            .addConverterFactory(JacksonConverterFactory.create());
+            .addConverterFactory(GsonConverterFactory.create());
 
 
     public static HomeService getHttpConnection() {

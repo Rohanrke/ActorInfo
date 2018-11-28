@@ -16,14 +16,17 @@ import java.util.List;
 public interface HeroDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    HeroModel save(HeroModel user);
+    Long save(HeroModel user);
 
     @Query("SELECT * FROM hero")
     LiveData<List<HeroModel>> load();
 
+    @Query("SELECT * FROM hero WHERE id = :id")
+    LiveData<HeroModel> getHero(int id);
+
     @Query("SELECT * FROM hero WHERE name = :name")
-    LiveData<HeroModel> getHero(String name);
+    LiveData<HeroModel> getHeroByName(String name);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void save(List<HeroModel> heroModel);
+    void insertAll(List<HeroModel> heroModel);
 }

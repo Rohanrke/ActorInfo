@@ -16,7 +16,7 @@ public class App extends Application {
         super.onCreate();
         INSTANCE = this;
         database = Room.databaseBuilder(getApplicationContext(),
-                HeroDatabase.class, "database-name").build();
+                HeroDatabase.class, "database-name").allowMainThreadQueries().build();
 
     }
 

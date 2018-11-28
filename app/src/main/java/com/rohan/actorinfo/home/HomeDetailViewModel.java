@@ -12,9 +12,9 @@ public class HomeDetailViewModel extends ViewModel {
     private LiveData<HeroModel> data;
     private HomeRepo repo = new HomeRepo();
 
-    public LiveData<HeroModel> getData(String name) {
+    public LiveData<HeroModel> getData(int id) {
         if (this.data == null) {
-            data = repo.getHero(name);
+            data = repo.getHero(id);
         }
         return data;
     }

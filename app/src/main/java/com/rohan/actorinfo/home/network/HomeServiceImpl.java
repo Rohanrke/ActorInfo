@@ -41,7 +41,7 @@ public class HomeServiceImpl {
             @Override
             public void onResponse(Call<List<HeroModel>> call, Response<List<HeroModel>> response) {
                 List<HeroModel> model = response.body();
-                heroDao.save(model);
+                heroDao.insertAll(model);
             }
 
             @Override

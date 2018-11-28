@@ -36,9 +36,9 @@ public class HomeRepo implements BaseRepo {
      }
 
 
-    public LiveData<HeroModel> getHero(String name){
+    public LiveData<HeroModel> getHero(int id){
 
-        return heroDao.getHero(name);
+        return heroDao.getHero(id);
     }
 
 

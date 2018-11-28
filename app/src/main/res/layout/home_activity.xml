@@ -23,14 +23,13 @@
         </android.support.v7.widget.RecyclerView>
 
 
+            <ProgressBar
+                android:id="@+id/pbr_activity_home"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_width="@dimen/margin_56"
+                android:layout_height="@dimen/margin_56" />
 
-        <include layout="@layout/intermediate_progress"
-            android:layout_height="@dimen/margin_56"
-            android:layout_width="@dimen/margin_56"
-            android:id="@+id/progress"
-            android:layout_gravity="center"
-            android:visibility="gone"
-            />
 
 
 </FrameLayout>

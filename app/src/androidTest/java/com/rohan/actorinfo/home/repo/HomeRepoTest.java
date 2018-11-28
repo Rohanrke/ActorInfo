@@ -43,15 +43,15 @@ public class HomeRepoTest {
     public void testAddHero() {
         HeroModel heroModel = new HeroModel();
         heroModel.setName("Hero");
-        Mockito.when(mockHeroDao.save(heroModel))
-                .thenReturn(new HeroModel());
+        Long value = mockHeroDao.save(heroModel);
+        Assert.assertNotNull(value);
 
 
     }
     @Test
     public void testGetHeroByName(){
 
-      HeroModel heroModel = mockHeroDao.getHero("Hero").getValue();
+      HeroModel heroModel = mockHeroDao.getHeroByName("Hero").getValue();
       Assert.assertNotNull(heroModel);
       Assert.assertEquals("Hero",heroModel.getName());
 
